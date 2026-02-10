@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/earnings/chargebacks',
+    url: 'https://api-next.ofauth.com/v2/access/analytics/earnings/chart',
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -18,11 +18,11 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'earnings_chargebacks',
-  noun: 'Chargebacks',
+  key: 'analytics_earnings_chart',
+  noun: 'Chart',
   display: {
-    label: 'List chargebacks',
-    description: 'Get a list of chargebacks **Permission Required:** `earnings:read`',
+    label: 'Earnings chart',
+    description: 'Get time-series earnings data **Permission Required:** `earnings:read`',
   },
   operation: {
     inputFields: [
@@ -41,11 +41,26 @@ module.exports = {
       helpText: 'End of date range (ISO 8601)',
     },
     {
-      key: 'marker',
-      label: 'Marker',
+      key: 'by',
+      label: 'By',
       type: 'string',
       required: false,
-      helpText: 'Pagination marker from previous response',
+      choices: ['total', 'messages', 'tips', 'stream', 'post', 'subscribes', 'tips_profile', 'tips_post', 'tips_chat', 'tips_stream', 'tips_story', 'ref'],
+      helpText: 'Earnings type to chart',
+    },
+    {
+      key: 'withTotal',
+      label: 'With Total',
+      type: 'boolean',
+      required: false,
+      helpText: 'Include total in response',
+    },
+    {
+      key: 'monthlyTotal',
+      label: 'Monthly Total',
+      type: 'boolean',
+      required: false,
+      helpText: 'Include monthly totals',
     }
     ],
     perform,

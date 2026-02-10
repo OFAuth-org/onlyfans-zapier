@@ -1,6 +1,6 @@
 {
   "name": "ofauth-zapier",
-  "version": "2.0.0",
+  "version": "2.3.0",
   "description": "OFAuth Zapier Integration",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,5 @@
   "devDependencies": {
     "zapier-platform-cli": "^15.0.0"
   },
-  "license": "Apache-2.0",
-  "keywords": [
-    "ofauth",
-    "onlyfans",
-    "sdk",
-    "zapier",
-    "integration"
-  ]
+  "license": "Apache-2.0"
 }

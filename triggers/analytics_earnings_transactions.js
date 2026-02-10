@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/earnings/chargebacks',
+    url: 'https://api-next.ofauth.com/v2/access/analytics/earnings/transactions',
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -18,11 +18,11 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'earnings_chargebacks',
-  noun: 'Chargebacks',
+  key: 'analytics_earnings_transactions',
+  noun: 'Transactions',
   display: {
-    label: 'List chargebacks',
-    description: 'Get a list of chargebacks **Permission Required:** `earnings:read`',
+    label: 'Transactions',
+    description: 'Get a list of earnings transactions **Permission Required:** `earnings:read`',
   },
   operation: {
     inputFields: [
@@ -31,14 +31,7 @@ module.exports = {
       label: 'Start Date',
       type: 'string',
       required: false,
-      helpText: 'Start of date range (ISO 8601)',
-    },
-    {
-      key: 'endDate',
-      label: 'End Date',
-      type: 'string',
-      required: false,
-      helpText: 'End of date range (ISO 8601)',
+      helpText: 'Start date for transactions',
     },
     {
       key: 'marker',
@@ -46,6 +39,22 @@ module.exports = {
       type: 'string',
       required: false,
       helpText: 'Pagination marker from previous response',
+    },
+    {
+      key: 'type',
+      label: 'Type',
+      type: 'string',
+      required: false,
+      choices: ['subscribes', 'chat_messages', 'post', 'stream', 'tips'],
+      helpText: 'Transaction type filter',
+    },
+    {
+      key: 'tipsSource',
+      label: 'Tips Source',
+      type: 'string',
+      required: false,
+      choices: ['chat', 'post_all', 'profile', 'story', 'stream'],
+      helpText: 'Tips source filter (when type=tips)',
     }
     ],
     perform,

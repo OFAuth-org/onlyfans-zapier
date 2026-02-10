@@ -55,11 +55,18 @@ module.exports = {
       helpText: 'Whether this is a forwarded message',
     },
     {
-      key: 'body_text',
-      label: 'Text',
-      type: 'string',
+      key: 'body_isLockedText',
+      label: 'Is Locked Text',
+      type: 'boolean',
       required: false,
-      helpText: 'Message text content',
+      helpText: 'Whether text is locked behind paywall (defaults to false).',
+    },
+    {
+      key: 'body_isMarkdown',
+      label: 'Is Markdown',
+      type: 'boolean',
+      required: false,
+      helpText: 'Whether message uses markdown formatting',
     },
     {
       key: 'body_mediaItems',
@@ -69,11 +76,11 @@ module.exports = {
       helpText: 'Media IDs to attach to message',
     },
     {
-      key: 'body_isLockedText',
-      label: 'Is Locked Text',
-      type: 'boolean',
+      key: 'body_previewMediaCount',
+      label: 'Preview Media Count',
+      type: 'integer',
       required: false,
-      helpText: 'Whether text is locked behind paywall',
+      helpText: 'Number of media items to show as preview',
     },
     {
       key: 'body_price',
@@ -83,13 +90,6 @@ module.exports = {
       helpText: 'Price to unlock message content (0 for free)',
     },
     {
-      key: 'body_previewMediaCount',
-      label: 'Preview Media Count',
-      type: 'integer',
-      required: false,
-      helpText: 'Number of media items to show as preview',
-    },
-    {
       key: 'body_releaseForms',
       label: 'Release Forms',
       type: 'text',
@@ -97,18 +97,18 @@ module.exports = {
       helpText: 'Release form participants',
     },
     {
+      key: 'body_text',
+      label: 'Text',
+      type: 'string',
+      required: false,
+      helpText: 'Message text content',
+    },
+    {
       key: 'body_userTags',
       label: 'User Tags',
       type: 'string',
       required: false,
       helpText: 'Users to tag in the message',
-    },
-    {
-      key: 'body_isMarkdown',
-      label: 'Is Markdown',
-      type: 'boolean',
-      required: false,
-      helpText: 'Whether message uses markdown formatting',
     }
     ],
     perform,

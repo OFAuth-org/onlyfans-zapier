@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/earnings/chargebacks',
+    url: 'https://api-next.ofauth.com/v2/access/analytics/earnings/chargebacks',
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -18,10 +18,10 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'earnings_chargebacks',
+  key: 'analytics_earnings_chargebacks',
   noun: 'Chargebacks',
   display: {
-    label: 'List chargebacks',
+    label: 'Chargebacks',
     description: 'Get a list of chargebacks **Permission Required:** `earnings:read`',
   },
   operation: {

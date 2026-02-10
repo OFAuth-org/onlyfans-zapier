@@ -18,7 +18,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/promotions/trial-links',
+    url: 'https://api-next.ofauth.com/v2/access/promotions/:promotionId/stop',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -32,41 +32,20 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'promotions_trial_links',
-  noun: 'Links',
+  key: 'promotions_stop_post',
+  noun: 'Post',
   display: {
-    label: 'Create trial link',
-    description: 'Create a new trial link **Permission Required:** `promotions:write`',
+    label: 'Stop promotion',
+    description: 'Stop/end a promotion **Permission Required:** `promotions:write`',
   },
   operation: {
     inputFields: [
     {
-      key: 'body_expiredAt',
-      label: 'Expired At',
-      type: 'string',
-      required: false,
-      helpText: 'When the trial link expires',
-    },
-    {
-      key: 'body_subscribeCounts',
-      label: 'Subscribe Counts',
-      type: 'integer',
-      required: false,
-      helpText: 'Maximum number of times trial can be claimed',
-    },
-    {
-      key: 'body_subscribeDays',
-      label: 'Subscribe Days',
-      type: 'integer',
-      required: true,
-      helpText: 'Number of days for trial subscription',
-    },
-    {
-      key: 'body_trialLinkName',
-      label: 'Trial Link Name',
+      key: 'promotionId',
+      label: 'Promotion Id',
       type: 'string',
       required: true,
-      helpText: 'Name for the trial link',
+      helpText: 'Promotion ID',
     }
     ],
     perform,

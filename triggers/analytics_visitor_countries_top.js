@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/earnings/chargebacks',
+    url: 'https://api-next.ofauth.com/v2/access/analytics/visitor-countries/top',
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -18,11 +18,11 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'earnings_chargebacks',
-  noun: 'Chargebacks',
+  key: 'analytics_visitor_countries_top',
+  noun: 'Top',
   display: {
-    label: 'List chargebacks',
-    description: 'Get a list of chargebacks **Permission Required:** `earnings:read`',
+    label: 'Top visitor countries',
+    description: 'Get top visitor countries **Permission Required:** `analytics:read`',
   },
   operation: {
     inputFields: [
@@ -41,11 +41,12 @@ module.exports = {
       helpText: 'End of date range (ISO 8601)',
     },
     {
-      key: 'marker',
-      label: 'Marker',
+      key: 'by',
+      label: 'By',
       type: 'string',
       required: false,
-      helpText: 'Pagination marker from previous response',
+      choices: ['guests', 'total', 'users'],
+      helpText: 'Visitor metric to rank by',
     }
     ],
     perform,

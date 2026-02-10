@@ -14,5 +14,12 @@
   "devDependencies": {
     "zapier-platform-cli": "^15.0.0"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "keywords": [
+    "ofauth",
+    "onlyfans",
+    "sdk",
+    "zapier",
+    "integration"
+  ]
 }

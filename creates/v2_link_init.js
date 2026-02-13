@@ -41,6 +41,13 @@ module.exports = {
   operation: {
     inputFields: [
     {
+      key: 'body_redirectUrl',
+      label: 'Redirect Url',
+      type: 'string',
+      required: false,
+      helpText: 'URL to redirect to after completion. If omitted, uses first allowed redirect URI.',
+    },
+    {
       key: 'body_clientReferenceId',
       label: 'Client Reference Id',
       type: 'string',
@@ -60,13 +67,6 @@ module.exports = {
       type: 'text',
       required: false,
       helpText: 'geolocation',
-    },
-    {
-      key: 'body_redirectUrl',
-      label: 'Redirect Url',
-      type: 'string',
-      required: false,
-      helpText: 'URL to redirect to after completion. If omitted, uses first allowed redirect URI.',
     }
     ],
     perform,

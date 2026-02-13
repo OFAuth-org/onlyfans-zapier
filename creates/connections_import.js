@@ -41,18 +41,18 @@ module.exports = {
   operation: {
     inputFields: [
     {
-      key: 'body_clientReferenceId',
-      label: 'Client Reference Id',
-      type: 'string',
-      required: false,
-      helpText: 'Optional client reference ID for tracking.',
-    },
-    {
       key: 'body_cookie',
       label: 'Cookie',
       type: 'string',
       required: true,
       helpText: 'The OnlyFans session cookie string. Must contain `auth_id`, `sess`, and `fp` values.',
+    },
+    {
+      key: 'body_userAgent',
+      label: 'User Agent',
+      type: 'string',
+      required: true,
+      helpText: 'The user agent string that was used to create this session.',
     },
     {
       key: 'body_permissions',
@@ -62,11 +62,11 @@ module.exports = {
       helpText: 'Permissions to grant. Defaults to organization permissions.',
     },
     {
-      key: 'body_userAgent',
-      label: 'User Agent',
+      key: 'body_clientReferenceId',
+      label: 'Client Reference Id',
       type: 'string',
-      required: true,
-      helpText: 'The user agent string that was used to create this session.',
+      required: false,
+      helpText: 'Optional client reference ID for tracking.',
     }
     ],
     perform,

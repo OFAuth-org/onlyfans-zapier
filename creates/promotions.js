@@ -48,18 +48,18 @@ module.exports = {
       helpText: 'Discount percentage to offer',
     },
     {
-      key: 'body_finishDays',
-      label: 'Finish Days',
-      type: 'integer',
-      required: true,
-      helpText: 'Days until promotion ends',
-    },
-    {
       key: 'body_message',
       label: 'Message',
       type: 'string',
       required: true,
       helpText: 'Promotion message',
+    },
+    {
+      key: 'body_finishDays',
+      label: 'Finish Days',
+      type: 'integer',
+      required: true,
+      helpText: 'Days until promotion ends',
     },
     {
       key: 'body_subscribeCounts',

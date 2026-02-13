@@ -34,14 +34,14 @@ module.exports = {
       label: 'Limit',
       type: 'integer',
       required: false,
-      helpText: 'Number of items to return (1-20, default: 10)',
+      helpText: 'Number of messages to return (max 10)',
     },
     {
       key: 'offset',
       label: 'Offset',
       type: 'integer',
       required: false,
-      helpText: 'Number of items to skip (default: 0)',
+      helpText: 'Number of messages to skip (for pagination)',
     },
     {
       key: 'query',
@@ -51,8 +51,8 @@ module.exports = {
       helpText: 'Search/filter text',
     },
     {
-      key: 'id',
-      label: 'Id',
+      key: 'lastId',
+      label: 'Last Id',
       type: 'string',
       required: false,
       helpText: 'ID of the last message from previous page. Used for cursor pagination.',
@@ -63,6 +63,13 @@ module.exports = {
       type: 'string',
       required: false,
       helpText: 'Include this message ID as the first message in the results. Used to retrieve messages from e.g. the Search Chat Messages endpoint IDs.',
+    },
+    {
+      key: 'includeUsers',
+      label: 'Include Users',
+      type: 'boolean',
+      required: false,
+      helpText: 'Include user data in the response',
     }
     ],
     perform,

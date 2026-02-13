@@ -1,6 +1,6 @@
 {
   "name": "ofauth-zapier",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "OFAuth Zapier Integration",
   "main": "index.js",
   "scripts": {

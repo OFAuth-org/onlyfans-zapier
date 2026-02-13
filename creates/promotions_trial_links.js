@@ -41,18 +41,11 @@ module.exports = {
   operation: {
     inputFields: [
     {
-      key: 'body_expiredAt',
-      label: 'Expired At',
+      key: 'body_trialLinkName',
+      label: 'Trial Link Name',
       type: 'string',
-      required: false,
-      helpText: 'When the trial link expires',
-    },
-    {
-      key: 'body_subscribeCounts',
-      label: 'Subscribe Counts',
-      type: 'integer',
-      required: false,
-      helpText: 'Maximum number of times trial can be claimed',
+      required: true,
+      helpText: 'Name for the trial link',
     },
     {
       key: 'body_subscribeDays',
@@ -62,11 +55,18 @@ module.exports = {
       helpText: 'Number of days for trial subscription',
     },
     {
-      key: 'body_trialLinkName',
-      label: 'Trial Link Name',
+      key: 'body_subscribeCounts',
+      label: 'Subscribe Counts',
+      type: 'integer',
+      required: false,
+      helpText: 'Maximum number of times trial can be claimed',
+    },
+    {
+      key: 'body_expiredAt',
+      label: 'Expired At',
       type: 'string',
-      required: true,
-      helpText: 'Name for the trial link',
+      required: false,
+      helpText: 'When the trial link expires',
     }
     ],
     perform,
